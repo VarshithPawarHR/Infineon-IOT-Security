@@ -128,7 +128,7 @@ int main(void)
 
     uint8_t iv2[16];
 
-    memcpy(iv2,iv,16);
+    memcpy(iv2,iv,16); //memcpy is a function in c programming not in mbedtls library
 
     uint8_t recv_buff[16];
 
@@ -214,10 +214,6 @@ int main(void)
 
         //free the context
         mbedtls_aes_free(&aescontext);
-
-
-
-
 
 
 
