@@ -4351,3 +4351,6 @@ java.lang.IllegalStateException: Conflicting handlers: {[org.eclipse.ui.internal
 
 !ENTRY org.eclipse.cdt.core 1 0 2025-03-29 22:33:07.473
 !MESSAGE Indexed 'AEScbcMode' (9 sources, 45 headers) in 0.108 sec: 1,146 declarations; 2,184 references; 40 unresolved inclusions; 24 syntax errors; 319 unresolved names (8.7%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-03-29 23:49:09.668
+!MESSAGE Indexed 'DESmbedtls' (9 sources, 45 headers) in 0.292 sec: 1,135 declarations; 2,144 references; 39 unresolved inclusions; 24 syntax errors; 310 unresolved names (8.6%)
