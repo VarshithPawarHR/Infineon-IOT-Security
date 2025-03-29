@@ -196,7 +196,7 @@ int main(void)
 
 
     //printing
-            print_uint8_data(recv, sizeof(recv));
+        print_uint8_data(recv, sizeof(recv));
 
 
 
@@ -206,4 +206,66 @@ int main(void)
     }
 }
 
+/*
+ #include <stdio.h>
+#include <string.h>
+#include "mbedtls/des.h"
+
+void print_data(const char* label, uint8_t* data, size_t len) {
+    printf("%s: ", label);
+    for (size_t i = 0; i < len; i++) {
+        printf("0x%02X ", data[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    uint8_t key[8] = {0x13, 0x34, 0x57, 0x79, 0x9B, 0xBC, 0xDF, 0xF1};
+    uint8_t input[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};  // More than 8 bytes
+    size_t input_len = sizeof(input);
+    size_t padded_len = (input_len % 8 == 0) ? input_len : (input_len + (8 - (input_len % 8)));  // Round up to 8-byte blocks
+
+    uint8_t padded_input[padded_len];  // Adjusted size
+    uint8_t output[padded_len];  // Encrypted data
+    uint8_t recv[padded_len];  // Decrypted data
+
+    mbedtls_des_context descontext;
+    mbedtls_des_init(&descontext);
+
+    // 🔹 Copy input and add zero padding
+    memset(padded_input, 0, padded_len);  // Initialize with zeroes
+    memcpy(padded_input, input, input_len);
+
+    print_data("Padded Input", padded_input, padded_len);
+
+    // 🔹 Set encryption key
+    mbedtls_des_setkey_enc(&descontext, key);
+
+    // 🔹 Encrypt each 8-byte block separately
+    for (size_t i = 0; i < padded_len; i += 8) {
+        mbedtls_des_crypt_ecb(&descontext, &padded_input[i], &output[i]);
+    }
+    print_data("Encrypted Data", output, padded_len);
+
+    // 🔹 Set decryption key
+    mbedtls_des_setkey_dec(&descontext, key);
+
+    // 🔹 Decrypt each 8-byte block separately
+    for (size_t i = 0; i < padded_len; i += 8) {
+        mbedtls_des_crypt_ecb(&descontext, &output[i], &recv[i]);
+    }
+    print_data("Decrypted Data (before unpadding)", recv, padded_len);
+
+    // 🔹 Print only the original input size (removes padding)
+    printf("Decrypted Data (after unpadding): ");
+    for (size_t i = 0; i < input_len; i++) {
+        printf("0x%02X ", recv[i]);
+    }
+    printf("\n");
+
+    mbedtls_des_free(&descontext);
+    return 0;
+}
+
+ */
 
