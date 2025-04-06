@@ -1,9 +1,0 @@
-22:09:15 **** Clean-only build of configuration Debug for project mbedTLSrandomNumber ****
-"C:\\Users\\hp\\ModusToolbox\\tools_3.3\\modus-shell\\bin\\make" CY_MAKE_IDE=eclipse CY_IDE_TOOLS_DIR=C:/Users/hp/ModusToolbox/tools_3.3 CY_IDE_BT_TOOLS_DIR= -j12 --output-sync clean_proj 
-Tools Directory: C:/Users/hp/ModusToolbox/tools_3.3
-Searching installed tools in progress...
-Searching installed tools complete
-rm -rf D:/Projects/infineon/mbedTLSrandomNumber/build
-
-22:09:15 Build Finished. 0 errors, 0 warnings. (took 517ms)
-
