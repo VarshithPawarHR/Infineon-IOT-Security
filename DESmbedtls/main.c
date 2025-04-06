@@ -247,7 +247,7 @@ int main() {
     // 🔹 Set decryption key
     mbedtls_des_setkey_dec(&descontext, key);
 
-    // 🔹 Decrypt each 8-byte block
+    // 🔹 Decrypt each 8-byte blockg
     for (size_t i = 0; i < padded_len; i += 8) {
         mbedtls_des_crypt_ecb(&descontext, &output[i], &recv[i]);
     }

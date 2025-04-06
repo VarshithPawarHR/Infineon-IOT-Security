@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchHistory>
     <launchGroup id="org.eclipse.debug.ui.launchGroup.debug">
-        <mruHistory/>
+        <mruHistory>
+            <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/ECDHmbedtls/.mtbLaunchConfigs/ECDHmbedtls Debug (KitProg3_MiniProg4).launch&quot;/&gt;&#10;"/>
+        </mruHistory>
         <favorites>
             <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/mbedTLSrandomNumber/.mtbLaunchConfigs/TEMPLATE_PSOC_OPTIGA_IOT_KIT Debug (KitProg3_MiniProg4).launch&quot;/&gt;&#10;"/>
             <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/mbedTLSrandomNumber/.mtbLaunchConfigs/mbedTLSrandomNumber Debug (KitProg3_MiniProg4).launch&quot;/&gt;&#10;"/>
@@ -12,6 +14,8 @@
             <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/AESecb/.mtbLaunchConfigs/AESecb Debug (KitProg3_MiniProg4).launch&quot;/&gt;&#10;"/>
             <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/DESmbedtls/.mtbLaunchConfigs/DESmbedtls Debug (KitProg3_MiniProg4).launch&quot;/&gt;&#10;"/>
             <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/DESmbedtls/.mtbLaunchConfigs/TEMPLATE_PSOC_OPTIGA_IOT_KIT Debug (KitProg3_MiniProg4).launch&quot;/&gt;&#10;"/>
+            <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/ECDHmbedtls/.mtbLaunchConfigs/ECDHmbedtls Debug (KitProg3_MiniProg4).launch&quot;/&gt;&#10;"/>
+            <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/ECDHmbedtls/.mtbLaunchConfigs/TEMPLATE_PSOC_OPTIGA_IOT_KIT Debug (KitProg3_MiniProg4).launch&quot;/&gt;&#10;"/>
         </favorites>
     </launchGroup>
     <launchGroup id="org.eclipse.debug.ui.launchGroup.profile">
@@ -20,6 +24,7 @@
     </launchGroup>
     <launchGroup id="org.eclipse.ui.externaltools.launchGroup">
         <mruHistory>
+            <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/ECDHmbedtls/.mtbLaunchConfigs/ECDHmbedtls Program (KitProg3_MiniProg4).launch&quot;/&gt;&#10;"/>
             <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/DESmbedtls/.mtbLaunchConfigs/DESmbedtls Program (KitProg3_MiniProg4).launch&quot;/&gt;&#10;"/>
             <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/AESecb/.mtbLaunchConfigs/AESecb Program (KitProg3_MiniProg4).launch&quot;/&gt;&#10;"/>
             <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/mbedTLSrandomNumber/.mtbLaunchConfigs/mbedTLSrandomNumber Program (KitProg3_MiniProg4).launch&quot;/&gt;&#10;"/>
@@ -27,7 +32,9 @@
         <favorites/>
     </launchGroup>
     <launchGroup id="org.eclipse.debug.ui.launchGroup.run">
-        <mruHistory/>
+        <mruHistory>
+            <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/ECDHmbedtls/.mtbLaunchConfigs/ECDHmbedtls Debug (KitProg3_MiniProg4).launch&quot;/&gt;&#10;"/>
+        </mruHistory>
         <favorites/>
     </launchGroup>
 </launchHistory>
