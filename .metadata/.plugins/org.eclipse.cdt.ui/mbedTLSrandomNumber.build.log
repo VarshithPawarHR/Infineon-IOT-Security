@@ -1,51 +1,9 @@
-18:41:06 **** Incremental Build of configuration Debug for project mbedTLSrandomNumber ****
-"C:\\Users\\hp\\ModusToolbox\\tools_3.3\\modus-shell\\bin\\make" CY_MAKE_IDE=eclipse CY_IDE_TOOLS_DIR=C:/Users/hp/ModusToolbox/tools_3.3 CY_IDE_BT_TOOLS_DIR= -j12 --output-sync build_proj 
+22:09:15 **** Clean-only build of configuration Debug for project mbedTLSrandomNumber ****
+"C:\\Users\\hp\\ModusToolbox\\tools_3.3\\modus-shell\\bin\\make" CY_MAKE_IDE=eclipse CY_IDE_TOOLS_DIR=C:/Users/hp/ModusToolbox/tools_3.3 CY_IDE_BT_TOOLS_DIR= -j12 --output-sync clean_proj 
 Tools Directory: C:/Users/hp/ModusToolbox/tools_3.3
 Searching installed tools in progress...
 Searching installed tools complete
-Initializing build: mtb-example-empty-app Debug APP_CYSBSYSKIT-DEV-01 GCC_ARM
-Toolchain validation: PASS
+rm -rf D:/Projects/infineon/mbedTLSrandomNumber/build
 
-Prebuild operations complete
-
-Auto-discovery in progress...
-Auto-discovery complete
-Commencing build operations...
-
-Tools Directory: C:/Users/hp/ModusToolbox/tools_3.3
-
-Constructing build rules...
-Build rules construction complete
-
-==============================================================================
-= Building application =
-==============================================================================
-Generating compilation database file...
--> ./build/compile_commands.json
-Compilation database file generation complete
-Building 343 file(s)
-==============================================================================
-= Build complete =
-==============================================================================
-
-   ---------------------------------------------------- 
-  | Section Name         |  Address      |  Size       | 
-   ---------------------------------------------------- 
-  | .cy_m0p_image        |  0x10000000   |  6352       | 
-  | .text                |  0x10002000   |  50444      | 
-  | .ARM.exidx           |  0x1000e50c   |  8          | 
-  | .copy.table          |  0x1000e514   |  24         | 
-  | .zero.table          |  0x1000e52c   |  8          | 
-  | .data                |  0x080022e0   |  1632       | 
-  | .cy_sharedmem        |  0x08002940   |  8          | 
-  | .noinit              |  0x08002948   |  228        | 
-  | .bss                 |  0x08002a2c   |  10600      | 
-  | .heap                |  0x08005398   |  1021032    | 
-   ---------------------------------------------------- 
-
-  Total Internal Flash (Available)          2097152    
-  Total Internal Flash (Utilized)           60316      
-
-
-18:41:08 Build Finished. 0 errors, 0 warnings. (took 2s.123ms)
+22:09:15 Build Finished. 0 errors, 0 warnings. (took 517ms)
 
