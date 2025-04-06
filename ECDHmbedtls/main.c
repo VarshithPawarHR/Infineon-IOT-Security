@@ -128,5 +128,3 @@ int main(void)
 
     for (;;);
 }
-
-/* [] END OF FILE */
