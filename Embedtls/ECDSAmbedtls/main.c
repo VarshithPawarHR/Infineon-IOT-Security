@@ -5,39 +5,9 @@
 #include "mbedtls/ctr_drbg.h"
 #include "mbedtls/entropy.h"
 #include "mbedtls/sha256.h"
-
-/**************************
-* Macros
-***************************/
+#include "mbedtls/ecp.h"
 
 
-/***************************
-* Global Variables
-***************************/
-
-
-/***************************
-* Function Prototypes
-***************************/
-
-
-/***************************
-* Function Definitions
-***************************/
-/***************************
-* Function Name: print_uint8_data()
-****************************
-* Summary:
-*   Function used to display the data in hexadecimal format
-*
-* Parameters:
-*  uint8_t* data - Pointer to location of data to be printed
-*  size_t  len  - length of data to be printed
-*
-* Return:
-*  void
-*
-***************************/
 void print_uint8_data(uint8_t* data, size_t len)
 {
     char print[10];
@@ -163,20 +133,15 @@ int main(void)
     mbedtls_mpi_init(&s);
 
 
-
-    /* Generate ECDSA keypair */
+/* Generate ECDSA keypair */
  mbedtls_ecp_group_load(&keypair.private_grp, MBEDTLS_ECP_DP_SECP256R1); // not needed (required if the things are on different interface)
  mbedtls_ecp_gen_keypair(&keypair.private_grp, &keypair.private_d, &keypair.private_Q, mbedtls_ctr_drbg_random, &random_context);
-
-
-
 
 
     /* Hash the message */
     const char *message = "Yokoso Watashi no soul society Ye!";
     uint8_t hash[32];
     mbedtls_sha256((const unsigned char *)message, strlen(message), hash, 0);
-
 
 
     /* Sign the hash */
