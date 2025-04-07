@@ -115,12 +115,13 @@ int main(void)
     uint16_t data_len = strlen(input_string);
 
     // Padding calculation (PKCS#7 style)
+
     uint8_t padded_data[100] = {0};
     memcpy(padded_data, data, data_len);
 
-    uint8_t padding_len = AES128_KEY_LENGTH - (data_len % AES128_KEY_LENGTH);
+    uint8_t padding_len = 16 - (data_len % 16);
     if (padding_len == 0){
-        padding_len = AES128_KEY_LENGTH;
+        padding_len = 16;
     }
 
     for (int i = data_len; i < data_len + padding_len; i++)
@@ -199,7 +200,7 @@ int main(void)
 
     // Remove PKCS#7 padding
     uint8_t last_byte = plain_data[plain_len - 1];
-    if (last_byte <= AES128_KEY_LENGTH)
+    if (last_byte <= 16)
     {
         plain_len -= last_byte;
         plain_data[plain_len] = '\0'; // Null-terminate
