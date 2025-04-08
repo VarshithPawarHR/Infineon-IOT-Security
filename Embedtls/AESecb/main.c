@@ -119,84 +119,71 @@ int main(void)
 
 	//Core working of program
 
-    //declaration of variables
-    uint8_t key[] = {0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0a,0x0b,0x0c,0x0d,0x0e,0x0f};
-    uint8_t input_buffer[] = {1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6};
-    uint8_t output_buffer[16];
-    uint8_t rec_buffer[16];
+    // Sample 128-bit AES key (just for demo)
+        uint8_t aes_key[16] = {
+            0x60, 0x3D, 0xEB, 0x10, 0x15, 0xCA, 0x71, 0xBE,
+            0x2B, 0x73, 0xAE, 0xF0, 0x85, 0x7D, 0x77, 0x81
+        };
 
-    //context creation
-    mbedtls_aes_context aescontext;
+        const char *input_string = "12345CDEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+        uint8_t *data = (uint8_t *)input_string;
+        uint16_t data_len = strlen(input_string);
 
+        // Padding (PKCS#7)
+        uint8_t padded_data[100] = {0};
+        memcpy(padded_data, data, data_len);
 
-    //initialization
-    mbedtls_aes_init(&aescontext);
+        uint8_t padding_len = 16 - (data_len % 16);
+        if (padding_len == 0) padding_len = 16;
 
-    //key generation
-    int keygen =mbedtls_aes_setkey_enc(&aescontext, (const unsigned char *) key,128);
-
-    if(keygen ==0)
-    {
-    	printf("successful key generation \r\n");
-
-    }
-    else{
-    	printf("failure ");
-    	return 0;
-    }
-
-    //encryption
-
-   int cryptsuc = mbedtls_aes_crypt_ecb(&aescontext, MBEDTLS_AES_ENCRYPT, (const unsigned char *) input_buffer ,
-    		(unsigned char *) output_buffer);
-
-    if(cryptsuc==0)
-    {
-    	printf("successful key encryption \r\n");
-    }
-    else{
-    	printf("failure ");
-    	    	return 0;
-    }
-
-    //print part
-    print_uint8_data(output_buffer, sizeof(output_buffer));
-
-
-    //decryption part starts first with key generation
-
-    int keygen1 =mbedtls_aes_setkey_dec(&aescontext, (const unsigned char *) key,128);
-
-        if(keygen1 ==0)
+        for (int i = data_len; i < data_len + padding_len; i++)
         {
-        	printf("successful key generation\r\n");
-
-        }
-        else{
-        	printf("failure ");
-        	return 0;
+            padded_data[i] = padding_len;
         }
 
-        //decryption
+        uint32_t padded_total_len = data_len + padding_len;
 
-        int decryptsuc = mbedtls_aes_crypt_ecb(&aescontext, MBEDTLS_AES_DECRYPT, (const unsigned char *) output_buffer ,
-            		(unsigned char *) rec_buffer);
+        // Encryption
+        mbedtls_aes_context aes_enc;
+        mbedtls_aes_init(&aes_enc);
+        mbedtls_aes_setkey_enc(&aes_enc, aes_key, 128);
 
-            if(decryptsuc==0)
-            {
-            	printf("successful key decryption \r\n");
-            }
-            else{
-            	printf("failure ");
-            	    	return 0;
-            }
+        uint8_t encrypted[100] = {0};
 
-            //print part
+        for (size_t i = 0; i < padded_total_len; i += 16)
+        {
+            mbedtls_aes_crypt_ecb(&aes_enc, MBEDTLS_AES_ENCRYPT, padded_data + i, encrypted + i);
+        }
 
-            print_uint8_data(rec_buffer,sizeof(rec_buffer));
+        print_uint8_data(encrypted, padded_total_len);
 
-            mbedtls_aes_free(&aescontext);
+        // Decryption
+        mbedtls_aes_context aes_dec;
+        mbedtls_aes_init(&aes_dec);
+        mbedtls_aes_setkey_dec(&aes_dec, aes_key, 128);
 
+        uint8_t decrypted[100] = {0};
+
+        for (size_t i = 0; i < padded_total_len; i += 16)
+        {
+            mbedtls_aes_crypt_ecb(&aes_dec, MBEDTLS_AES_DECRYPT, encrypted + i, decrypted + i);
+        }
+
+        // Remove PKCS#7 padding
+        uint8_t last_byte = decrypted[padded_total_len - 1];
+        if (last_byte <= 16)
+        {
+        	padded_total_len -=last_byte;
+            decrypted[padded_total_len ] = '\0';
+        }
+
+
+        printf("\r\nDecrypted string: %s\r\n", decrypted);
+
+        mbedtls_aes_free(&aes_enc);
+        mbedtls_aes_free(&aes_dec);
+
+        return 0;
     for (;;)
     {
     }
