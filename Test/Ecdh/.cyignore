@@ -1,0 +1,12 @@
+# Documentation
+images
+
+# Exports, Project settings
+.mtbLaunchConfigs
+.settings
+.vscode
+
+$(SEARCH_mbedtls)/programs
+$(SEARCH_mbedtls)/tests
+$(SEARCH_mbedtls)/3rdparty
+$(SEARCH_mbedtls)/library/psa_crypto_storage.c

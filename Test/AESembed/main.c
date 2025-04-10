@@ -137,7 +137,7 @@ void decryptfunc(mbedtls_aes_context* aescontext,uint8_t* encrypt,uint8_t* ivcpy
 			decrypt[totalpaddedlen] ='\0';
 		}
 
-		printf("original text is: %.*s\r\n", totalpaddedlen, decrypt);
+		printf("original text is: %s", decrypt);
 
 
 
